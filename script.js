@@ -4,6 +4,7 @@ let checkbox = document.getElementById("checkbox");
 let submit = document.getElementById("submit");
 let form = document.getElementById('form');
 let isChacked=false;
+let username1=null;
 // localStorage.removeItem('userDetailess')
 checkbox.addEventListener('change',(e)=>{
     // console.log(e)
@@ -17,7 +18,7 @@ checkbox.addEventListener('change',(e)=>{
 let userDetailss =[]
 form.addEventListener('submit',(e)=>{
     e.preventDefault()
-    let obj ={
+    username1 ={
         'username':username.value,
         'passwort':password.value,
     }
