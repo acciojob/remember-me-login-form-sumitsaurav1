@@ -23,7 +23,7 @@ form.addEventListener('submit',(e)=>{
         'passwort':password.value,
     }
     if(isChacked){
-       userDetailss.push(obj);
+       userDetailss.push(username1);
        localStorage.setItem('userDetailss',JSON.stringify(userDetailss));
       
        
@@ -32,7 +32,7 @@ form.addEventListener('submit',(e)=>{
 })
 
 existingUser()
-
+let buttonn= document.getElementById('existing');
 function existingUser(){
     let userDetailss  = JSON.parse(localStorage.getItem('userDetailss'))||[];
     if(userDetailss.length>0){
@@ -40,7 +40,7 @@ function existingUser(){
         button.innerText = 'Login as existing user';
         button.setAttribute('id','existing')
         document.body.appendChild(button);
-        let buttonn= document.getElementById('existing');
+        
         buttonn.addEventListener('click',(e)=>{
             e.preventDefault();
             alert(`Logged in as ${userDetailss[0].username}`);
